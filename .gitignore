@@ -1,0 +1,60 @@
+# JavaScript dependencies and caches (keep package-lock.json)
+node_modules/
+.npm-cache/
+.npm/
+.vite/
+*.tsbuildinfo
+
+# Python environments, bytecode and tool caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+
+# Frontend, Electron and PyInstaller output
+/dist/
+/release/
+/build/
+/defense-worker.spec
+
+# Test output and temporary workspaces
+test-results/
+playwright-report/
+coverage/
+htmlcov/
+.coverage
+.coverage.*
+.test-tmp*/
+
+# Local application data and databases
+.local-data/
+*.sqlite
+*.sqlite3
+*.sqlite-*
+*.sqlite3-*
+
+# Local configuration, credentials and signing keys
+.env
+.env.*
+!.env.example
+!.env.*.example
+.npmrc
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Logs, editor settings and OS files
+*.log
+*.tmp
+*.swp
+*~
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+Desktop.ini

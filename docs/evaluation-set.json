@@ -1,0 +1,543 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-22",
+  "provenance": "项目自编虚构教学案例及派生标注，无真实论文或真人试用数据",
+  "executionStatus": "not_run",
+  "warning": "这是评测输入与人工预期，不是实测输出或质量成绩。原文出处按示例文字段落定位，运行时必须映射到实际chunkId。",
+  "materials": [
+    {
+      "id": "vision",
+      "title": "轻量化校园垃圾分类识别",
+      "kind": "synthetic_text",
+      "text": "研究问题：校园垃圾投放点的图像分类受到光照变化和设备算力限制，需要在边缘设备上完成识别。\n\n研究目标：构建可部署在低功耗设备上的垃圾分类模型，比较准确率与推理耗时。\n\n方法路线：采用轻量卷积网络，加入通道注意力模块，与不加注意力的基线在同一数据划分上比较。\n\n核心主张：在自建校园数据集上，基线准确率为86.2%，所提方法为88.1%，提升1.9个百分点。单张推理耗时从21毫秒增加至29毫秒。\n\n支持证据：自建数据集共1200张图片，按8:2划分训练集与测试集。两种方法使用相同划分。当前仅运行一次实验，未报告方差、置信区间或消融实验。\n\n适用边界：数据来自同一校区白天环境，尚未验证夜间、遮挡和其他校区。展示中“适用各种校园环境”的表述需要收窄或补充跨场景证据。"
+    },
+    {
+      "id": "sensor",
+      "title": "校园教室节能监测系统",
+      "kind": "synthetic_text",
+      "text": "研究问题：教室无人时照明仍持续开启，造成能源浪费。\n\n研究目标：设计低成本占用检测与照明提醒系统，评估可行性和节能效果。\n\n方法路线：组合红外传感器和门磁计数，以规则融合产生占用状态，在本地微控制器上运行。\n\n核心主张：系统完成传感器融合与可视化提醒。贡献主要是低成本集成与校园场景适配，不主张提出新的识别算法。\n\n支持证据：在一间教室连续测试三天，检测准确率为91%，物料成本约180元；未记录可靠的用电量对照，因此不能据此声称实际节能比例。\n\n适用边界：多人同时进出可能造成计数漂移，静坐人员可能触发红外漏检。当前仅验证一间教室，暂未测试阶梯教室或大规模部署。后续计划引入人工校准并开展同周期用电对照。"
+    },
+    {
+      "id": "insufficient",
+      "title": "信息不足派生材料",
+      "kind": "synthetic_insufficient",
+      "derivedFrom": "vision",
+      "text": "研究问题：校园垃圾分类。研究目标：构建分类模型。方法、实验数据、结论和边界尚未提供。",
+      "expected": "仅保留已展示信息，其余字段标记未找到；不能推断已完成或未完成研究。"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F01",
+      "caseId": "vision",
+      "paragraph": 1,
+      "claim": "研究对象为校园垃圾投放点图像分类",
+      "quote": "校园垃圾投放点的图像分类",
+      "expected": "画像归纳应忠实保留含义，不添加未展示事实"
+    },
+    {
+      "id": "F02",
+      "caseId": "vision",
+      "paragraph": 1,
+      "claim": "场景存在光照变化",
+      "quote": "光照变化",
+      "expected": "画像归纳应忠实保留含义，不添加未展示事实"
+    },
+    {
+      "id": "F03",
+      "caseId": "vision",
+      "paragraph": 1,
+      "claim": "部署受设备算力限制",
+      "quote": "设备算力限制",
+      "expected": "画像归纳应忠实保留含义，不添加未展示事实"
+    },
+    {
+      "id": "F04",
+      "caseId": "vision",
+      "paragraph": 2,
+      "claim": "目标包含低功耗设备部署",
+      "quote": "低功耗设备",
+      "expected": "画像归纳应忠实保留含义，不添加未展示事实"
+    },
+    {
+      "id": "F05",
+      "caseId": "vision",
+      "paragraph": 2,
+      "claim": "目标比较准确率和推理耗时",
+      "quote": "比较准确率与推理耗时",
+      "expected": "画像归纳应忠实保留含义，不添加未展示事实"
+    },
+    {
+      "id": "F06",
+      "caseId": "vision",
+      "paragraph": 3,
+      "claim": "主干为轻量卷积网络",
+      "quote": "轻量卷积网络",
+      "expected": "画像归纳应忠实保留含义，不添加未展示事实"
+    },
+    {
+      "id": "F07",
+      "caseId": "vision",
+      "paragraph": 3,
+      "claim": "引入通道注意力",
+      "quote": "通道注意力模块",
+      "expected": "画像归纳应忠实保留含义，不添加未展示事实"
+    },
+    {
+      "id": "F08",
+      "caseId": "vision",
+      "paragraph": 3,
+      "claim": "基线与新方法采用同一数据划分",
+      "quote": "同一数据划分",
+      "expected": "画像归纳应忠实保留含义，不添加未展示事实"
+    },
+    {
+      "id": "F09",
+      "caseId": "vision",
+      "paragraph": 4,
+      "claim": "基线准确率86.2%",
+      "quote": "86.2%",
+      "expected": "画像归纳应忠实保留含义，不添加未展示事实"
+    },
+    {
+      "id": "F10",
+      "caseId": "vision",
+      "paragraph": 4,
+      "claim": "所提方法准确率88.1%",
+      "quote": "88.1%",
+      "expected": "画像归纳应忠实保留含义，不添加未展示事实"
+    },
+    {
+      "id": "F11",
+      "caseId": "vision",
+      "paragraph": 4,
+      "claim": "提升为1.9个百分点",
+      "quote": "1.9个百分点",
+      "expected": "画像归纳应忠实保留含义，不添加未展示事实"
+    },
+    {
+      "id": "F12",
+      "caseId": "vision",
+      "paragraph": 4,
+      "claim": "推理耗时由21增加至29毫秒",
+      "quote": "从21毫秒增加至29毫秒",
+      "expected": "画像归纳应忠实保留含义，不添加未展示事实"
+    },
+    {
+      "id": "F13",
+      "caseId": "vision",
+      "paragraph": 5,
+      "claim": "数据集1200张并按8:2划分",
+      "quote": "1200张图片，按8:2",
+      "expected": "画像归纳应忠实保留含义，不添加未展示事实"
+    },
+    {
+      "id": "F14",
+      "caseId": "vision",
+      "paragraph": 5,
+      "claim": "仅运行一次且未报告方差置信区间或消融",
+      "quote": "当前仅运行一次实验，未报告方差、置信区间或消融实验",
+      "expected": "画像归纳应忠实保留含义，不添加未展示事实"
+    },
+    {
+      "id": "F15",
+      "caseId": "vision",
+      "paragraph": 6,
+      "claim": "数据来自同一校区白天，其他条件尚未验证",
+      "quote": "数据来自同一校区白天环境，尚未验证夜间、遮挡和其他校区",
+      "expected": "画像归纳应忠实保留含义，不添加未展示事实"
+    },
+    {
+      "id": "F16",
+      "caseId": "sensor",
+      "paragraph": 1,
+      "claim": "无人时照明持续开启造成浪费",
+      "quote": "教室无人时照明仍持续开启",
+      "expected": "画像归纳应忠实保留含义，不添加未展示事实"
+    },
+    {
+      "id": "F17",
+      "caseId": "sensor",
+      "paragraph": 2,
+      "claim": "目标为低成本占用检测与照明提醒",
+      "quote": "低成本占用检测与照明提醒系统",
+      "expected": "画像归纳应忠实保留含义，不添加未展示事实"
+    },
+    {
+      "id": "F18",
+      "caseId": "sensor",
+      "paragraph": 2,
+      "claim": "目标包含可行性和节能效果评价",
+      "quote": "评估可行性和节能效果",
+      "expected": "画像归纳应忠实保留含义，不添加未展示事实"
+    },
+    {
+      "id": "F19",
+      "caseId": "sensor",
+      "paragraph": 3,
+      "claim": "组合红外与门磁计数",
+      "quote": "红外传感器和门磁计数",
+      "expected": "画像归纳应忠实保留含义，不添加未展示事实"
+    },
+    {
+      "id": "F20",
+      "caseId": "sensor",
+      "paragraph": 3,
+      "claim": "采用规则融合产生占用状态",
+      "quote": "规则融合产生占用状态",
+      "expected": "画像归纳应忠实保留含义，不添加未展示事实"
+    },
+    {
+      "id": "F21",
+      "caseId": "sensor",
+      "paragraph": 3,
+      "claim": "运行于本地微控制器",
+      "quote": "本地微控制器上运行",
+      "expected": "画像归纳应忠实保留含义，不添加未展示事实"
+    },
+    {
+      "id": "F22",
+      "caseId": "sensor",
+      "paragraph": 4,
+      "claim": "已完成传感器融合与可视化提醒",
+      "quote": "系统完成传感器融合与可视化提醒",
+      "expected": "画像归纳应忠实保留含义，不添加未展示事实"
+    },
+    {
+      "id": "F23",
+      "caseId": "sensor",
+      "paragraph": 4,
+      "claim": "贡献为集成和场景适配",
+      "quote": "低成本集成与校园场景适配",
+      "expected": "画像归纳应忠实保留含义，不添加未展示事实"
+    },
+    {
+      "id": "F24",
+      "caseId": "sensor",
+      "paragraph": 4,
+      "claim": "不主张新识别算法",
+      "quote": "不主张提出新的识别算法",
+      "expected": "画像归纳应忠实保留含义，不添加未展示事实"
+    },
+    {
+      "id": "F25",
+      "caseId": "sensor",
+      "paragraph": 5,
+      "claim": "在一间教室测试三天",
+      "quote": "一间教室连续测试三天",
+      "expected": "画像归纳应忠实保留含义，不添加未展示事实"
+    },
+    {
+      "id": "F26",
+      "caseId": "sensor",
+      "paragraph": 5,
+      "claim": "检测准确率91%",
+      "quote": "检测准确率为91%",
+      "expected": "画像归纳应忠实保留含义，不添加未展示事实"
+    },
+    {
+      "id": "F27",
+      "caseId": "sensor",
+      "paragraph": 5,
+      "claim": "物料约180元",
+      "quote": "物料成本约180元",
+      "expected": "画像归纳应忠实保留含义，不添加未展示事实"
+    },
+    {
+      "id": "F28",
+      "caseId": "sensor",
+      "paragraph": 5,
+      "claim": "没有可靠用电量对照，不能声称节能比例",
+      "quote": "未记录可靠的用电量对照，因此不能据此声称实际节能比例",
+      "expected": "画像归纳应忠实保留含义，不添加未展示事实"
+    },
+    {
+      "id": "F29",
+      "caseId": "sensor",
+      "paragraph": 6,
+      "claim": "多人同时进出可能造成计数漂移",
+      "quote": "多人同时进出可能造成计数漂移",
+      "expected": "画像归纳应忠实保留含义，不添加未展示事实"
+    },
+    {
+      "id": "F30",
+      "caseId": "sensor",
+      "paragraph": 6,
+      "claim": "计划人工校准与同周期用电对照",
+      "quote": "后续计划引入人工校准并开展同周期用电对照",
+      "expected": "画像归纳应忠实保留含义，不添加未展示事实"
+    }
+  ],
+  "weaknesses": [
+    {
+      "id": "W01",
+      "caseId": "vision",
+      "paragraph": 5,
+      "target": "单次实验不足以说明稳定性",
+      "preferredCategory": "材料未展示",
+      "expected": "补充多次运行和离散程度，不能宣称已经显著"
+    },
+    {
+      "id": "W02",
+      "caseId": "vision",
+      "paragraph": 5,
+      "target": "尚无注意力消融支持模块归因",
+      "preferredCategory": "材料未展示",
+      "expected": "补充控制变量的消融设计"
+    },
+    {
+      "id": "W03",
+      "caseId": "vision",
+      "paragraph": 6,
+      "target": "白天同校区证据不支持各种校园环境",
+      "preferredCategory": "待澄清",
+      "expected": "引用白天范围及泛化表述，收窄范围或补充跨场景验证"
+    },
+    {
+      "id": "W04",
+      "caseId": "vision",
+      "paragraph": 4,
+      "target": "准确率提升伴随推理耗时增加",
+      "preferredCategory": "材料未展示",
+      "expected": "明确性能取舍和部署时延预算；不能自动判失败"
+    },
+    {
+      "id": "W05",
+      "caseId": "vision",
+      "paragraph": 5,
+      "target": "划分信息不足以排除数据泄漏",
+      "preferredCategory": "材料未展示",
+      "expected": "询问采集主体、场景及划分单位，不能指控已经泄漏"
+    },
+    {
+      "id": "W06",
+      "caseId": "sensor",
+      "paragraph": 5,
+      "target": "检测准确率不能替代真实节能比例",
+      "preferredCategory": "材料未展示",
+      "expected": "需用电量对照或收窄为占用检测可行性"
+    },
+    {
+      "id": "W07",
+      "caseId": "sensor",
+      "paragraph": 5,
+      "target": "单间三天不足以支持全校推广",
+      "preferredCategory": "材料未展示",
+      "expected": "扩展教室与周期；明确证据范围"
+    },
+    {
+      "id": "W08",
+      "caseId": "sensor",
+      "paragraph": 4,
+      "target": "集成贡献不应包装为新算法",
+      "preferredCategory": "待澄清",
+      "expected": "区分系统集成、场景适配与算法创新"
+    },
+    {
+      "id": "W09",
+      "caseId": "sensor",
+      "paragraph": 6,
+      "target": "多人同时进出可能计数漂移",
+      "preferredCategory": "材料未展示",
+      "expected": "设计多人进出和校准验证"
+    },
+    {
+      "id": "W10",
+      "caseId": "sensor",
+      "paragraph": 6,
+      "target": "静坐可能导致红外漏检",
+      "preferredCategory": "材料未展示",
+      "expected": "验证持续静坐并考虑融合失效策略"
+    }
+  ],
+  "branches": [
+    {
+      "id": "B01",
+      "caseId": "vision",
+      "class": "conclusion_only",
+      "classLabel": "只有结论",
+      "initialQuestion": "材料中的实验和系统实现能支持哪些主张？请说明证据、局限与下一步。",
+      "answer": "效果很好，方案可行。",
+      "pairedSufficientAnswer": "材料显示基线86.2%、所提方法88.1%，提升1.9个百分点，但耗时从21增加至29毫秒。相同划分可作初步比较，仅运行一次且未报告方差，不能据此断言统计显著。数据只覆盖同校区白天。下一步计划多次运行、注意力消融及夜间跨校区测试，再决定是否能扩大主张。",
+      "expectedBehavior": "追问从数据到结论的推理与出处",
+      "runsRequired": 3,
+      "status": "not_run",
+      "note": "充分类本身是对照；其余类与 pairedSufficientAnswer 使用完全相同初始问题分别运行。离线规则不作为真实模型行为的验收依据。"
+    },
+    {
+      "id": "B02",
+      "caseId": "sensor",
+      "class": "conclusion_only",
+      "classLabel": "只有结论",
+      "initialQuestion": "材料中的实验和系统实现能支持哪些主张？请说明证据、局限与下一步。",
+      "answer": "效果很好，方案可行。",
+      "pairedSufficientAnswer": "材料只支持一间教室三天的占用检测可行性：准确率91%、物料约180元。贡献是传感器融合和场景适配，不主张新算法；没有可靠用电量对照，因此不声称真实节能比例。多人进出和静坐仍有风险，下一步计划人工校准、扩展教室与周期并做同周期用电对照。",
+      "expectedBehavior": "追问从数据到结论的推理与出处",
+      "runsRequired": 3,
+      "status": "not_run",
+      "note": "充分类本身是对照；其余类与 pairedSufficientAnswer 使用完全相同初始问题分别运行。离线规则不作为真实模型行为的验收依据。"
+    },
+    {
+      "id": "B03",
+      "caseId": "vision",
+      "class": "vague",
+      "classLabel": "模糊提升",
+      "initialQuestion": "材料中的实验和系统实现能支持哪些主张？请说明证据、局限与下一步。",
+      "answer": "相比以前显著更好，性能大幅提高。",
+      "pairedSufficientAnswer": "材料显示基线86.2%、所提方法88.1%，提升1.9个百分点，但耗时从21增加至29毫秒。相同划分可作初步比较，仅运行一次且未报告方差，不能据此断言统计显著。数据只覆盖同校区白天。下一步计划多次运行、注意力消融及夜间跨校区测试，再决定是否能扩大主张。",
+      "expectedBehavior": "追问比较对象、指标与幅度",
+      "runsRequired": 3,
+      "status": "not_run",
+      "note": "充分类本身是对照；其余类与 pairedSufficientAnswer 使用完全相同初始问题分别运行。离线规则不作为真实模型行为的验收依据。"
+    },
+    {
+      "id": "B04",
+      "caseId": "sensor",
+      "class": "vague",
+      "classLabel": "模糊提升",
+      "initialQuestion": "材料中的实验和系统实现能支持哪些主张？请说明证据、局限与下一步。",
+      "answer": "相比以前显著更好，性能大幅提高。",
+      "pairedSufficientAnswer": "材料只支持一间教室三天的占用检测可行性：准确率91%、物料约180元。贡献是传感器融合和场景适配，不主张新算法；没有可靠用电量对照，因此不声称真实节能比例。多人进出和静坐仍有风险，下一步计划人工校准、扩展教室与周期并做同周期用电对照。",
+      "expectedBehavior": "追问比较对象、指标与幅度",
+      "runsRequired": 3,
+      "status": "not_run",
+      "note": "充分类本身是对照；其余类与 pairedSufficientAnswer 使用完全相同初始问题分别运行。离线规则不作为真实模型行为的验收依据。"
+    },
+    {
+      "id": "B05",
+      "caseId": "vision",
+      "class": "source_unknown",
+      "classLabel": "来源不明",
+      "initialQuestion": "材料中的实验和系统实现能支持哪些主张？请说明证据、局限与下一步。",
+      "answer": "我们还取得了97.3%的准确率。",
+      "pairedSufficientAnswer": "材料显示基线86.2%、所提方法88.1%，提升1.9个百分点，但耗时从21增加至29毫秒。相同划分可作初步比较，仅运行一次且未报告方差，不能据此断言统计显著。数据只覆盖同校区白天。下一步计划多次运行、注意力消融及夜间跨校区测试，再决定是否能扩大主张。",
+      "expectedBehavior": "询问新数字来源和实验条件，不判定造假",
+      "runsRequired": 3,
+      "status": "not_run",
+      "note": "充分类本身是对照；其余类与 pairedSufficientAnswer 使用完全相同初始问题分别运行。离线规则不作为真实模型行为的验收依据。"
+    },
+    {
+      "id": "B06",
+      "caseId": "sensor",
+      "class": "source_unknown",
+      "classLabel": "来源不明",
+      "initialQuestion": "材料中的实验和系统实现能支持哪些主张？请说明证据、局限与下一步。",
+      "answer": "我们还取得了97.3%的准确率。",
+      "pairedSufficientAnswer": "材料只支持一间教室三天的占用检测可行性：准确率91%、物料约180元。贡献是传感器融合和场景适配，不主张新算法；没有可靠用电量对照，因此不声称真实节能比例。多人进出和静坐仍有风险，下一步计划人工校准、扩展教室与周期并做同周期用电对照。",
+      "expectedBehavior": "询问新数字来源和实验条件，不判定造假",
+      "runsRequired": 3,
+      "status": "not_run",
+      "note": "充分类本身是对照；其余类与 pairedSufficientAnswer 使用完全相同初始问题分别运行。离线规则不作为真实模型行为的验收依据。"
+    },
+    {
+      "id": "B07",
+      "caseId": "vision",
+      "class": "conflict",
+      "classLabel": "前后冲突",
+      "initialQuestion": "材料中的实验和系统实现能支持哪些主张？请说明证据、局限与下一步。",
+      "answer": "我们的方案完全没有性能代价，而且适用于任何环境。",
+      "pairedSufficientAnswer": "材料显示基线86.2%、所提方法88.1%，提升1.9个百分点，但耗时从21增加至29毫秒。相同划分可作初步比较，仅运行一次且未报告方差，不能据此断言统计显著。数据只覆盖同校区白天。下一步计划多次运行、注意力消融及夜间跨校区测试，再决定是否能扩大主张。",
+      "expectedBehavior": "结合原文指出待澄清的口径和范围，不无依据判定矛盾",
+      "runsRequired": 3,
+      "status": "not_run",
+      "note": "充分类本身是对照；其余类与 pairedSufficientAnswer 使用完全相同初始问题分别运行。离线规则不作为真实模型行为的验收依据。"
+    },
+    {
+      "id": "B08",
+      "caseId": "sensor",
+      "class": "conflict",
+      "classLabel": "前后冲突",
+      "initialQuestion": "材料中的实验和系统实现能支持哪些主张？请说明证据、局限与下一步。",
+      "answer": "我们的主要贡献是全新识别算法，并已证明全校部署可以降低用电量。",
+      "pairedSufficientAnswer": "材料只支持一间教室三天的占用检测可行性：准确率91%、物料约180元。贡献是传感器融合和场景适配，不主张新算法；没有可靠用电量对照，因此不声称真实节能比例。多人进出和静坐仍有风险，下一步计划人工校准、扩展教室与周期并做同周期用电对照。",
+      "expectedBehavior": "结合原文指出待澄清的口径和范围，不无依据判定矛盾",
+      "runsRequired": 3,
+      "status": "not_run",
+      "note": "充分类本身是对照；其余类与 pairedSufficientAnswer 使用完全相同初始问题分别运行。离线规则不作为真实模型行为的验收依据。"
+    },
+    {
+      "id": "B09",
+      "caseId": "vision",
+      "class": "limitation",
+      "classLabel": "承认局限",
+      "initialQuestion": "材料中的实验和系统实现能支持哪些主张？请说明证据、局限与下一步。",
+      "answer": "这项工作仅在现有场景验证，尚未验证其他环境，存在局限。",
+      "pairedSufficientAnswer": "材料显示基线86.2%、所提方法88.1%，提升1.9个百分点，但耗时从21增加至29毫秒。相同划分可作初步比较，仅运行一次且未报告方差，不能据此断言统计显著。数据只覆盖同校区白天。下一步计划多次运行、注意力消融及夜间跨校区测试，再决定是否能扩大主张。",
+      "expectedBehavior": "追问影响范围与验证计划",
+      "runsRequired": 3,
+      "status": "not_run",
+      "note": "充分类本身是对照；其余类与 pairedSufficientAnswer 使用完全相同初始问题分别运行。离线规则不作为真实模型行为的验收依据。"
+    },
+    {
+      "id": "B10",
+      "caseId": "sensor",
+      "class": "limitation",
+      "classLabel": "承认局限",
+      "initialQuestion": "材料中的实验和系统实现能支持哪些主张？请说明证据、局限与下一步。",
+      "answer": "这项工作仅在现有场景验证，尚未验证其他环境，存在局限。",
+      "pairedSufficientAnswer": "材料只支持一间教室三天的占用检测可行性：准确率91%、物料约180元。贡献是传感器融合和场景适配，不主张新算法；没有可靠用电量对照，因此不声称真实节能比例。多人进出和静坐仍有风险，下一步计划人工校准、扩展教室与周期并做同周期用电对照。",
+      "expectedBehavior": "追问影响范围与验证计划",
+      "runsRequired": 3,
+      "status": "not_run",
+      "note": "充分类本身是对照；其余类与 pairedSufficientAnswer 使用完全相同初始问题分别运行。离线规则不作为真实模型行为的验收依据。"
+    },
+    {
+      "id": "B11",
+      "caseId": "vision",
+      "class": "sufficient",
+      "classLabel": "回答充分",
+      "initialQuestion": "材料中的实验和系统实现能支持哪些主张？请说明证据、局限与下一步。",
+      "answer": "材料显示基线86.2%、所提方法88.1%，提升1.9个百分点，但耗时从21增加至29毫秒。相同划分可作初步比较，仅运行一次且未报告方差，不能据此断言统计显著。数据只覆盖同校区白天。下一步计划多次运行、注意力消融及夜间跨校区测试，再决定是否能扩大主张。",
+      "pairedSufficientAnswer": "材料显示基线86.2%、所提方法88.1%，提升1.9个百分点，但耗时从21增加至29毫秒。相同划分可作初步比较，仅运行一次且未报告方差，不能据此断言统计显著。数据只覆盖同校区白天。下一步计划多次运行、注意力消融及夜间跨校区测试，再决定是否能扩大主张。",
+      "expectedBehavior": "允许切换或结束主题，不因字数继续纠缠",
+      "runsRequired": 3,
+      "status": "not_run",
+      "note": "充分类本身是对照；其余类与 pairedSufficientAnswer 使用完全相同初始问题分别运行。离线规则不作为真实模型行为的验收依据。"
+    },
+    {
+      "id": "B12",
+      "caseId": "sensor",
+      "class": "sufficient",
+      "classLabel": "回答充分",
+      "initialQuestion": "材料中的实验和系统实现能支持哪些主张？请说明证据、局限与下一步。",
+      "answer": "材料只支持一间教室三天的占用检测可行性：准确率91%、物料约180元。贡献是传感器融合和场景适配，不主张新算法；没有可靠用电量对照，因此不声称真实节能比例。多人进出和静坐仍有风险，下一步计划人工校准、扩展教室与周期并做同周期用电对照。",
+      "pairedSufficientAnswer": "材料只支持一间教室三天的占用检测可行性：准确率91%、物料约180元。贡献是传感器融合和场景适配，不主张新算法；没有可靠用电量对照，因此不声称真实节能比例。多人进出和静坐仍有风险，下一步计划人工校准、扩展教室与周期并做同周期用电对照。",
+      "expectedBehavior": "允许切换或结束主题，不因字数继续纠缠",
+      "runsRequired": 3,
+      "status": "not_run",
+      "note": "充分类本身是对照；其余类与 pairedSufficientAnswer 使用完全相同初始问题分别运行。离线规则不作为真实模型行为的验收依据。"
+    }
+  ],
+  "anomalies": [
+    {
+      "id": "A01",
+      "type": "invalid_or_encrypted_pdf",
+      "input": "损坏PDF与加密PDF分别构造",
+      "expected": "拒绝并说明完整性或解除加密；不创建残留材料"
+    },
+    {
+      "id": "A02",
+      "type": "scanned_or_insufficient",
+      "input": "无文字扫描PDF及不足30字符文本",
+      "expected": "提示文字不足或不支持OCR，允许粘贴文字"
+    },
+    {
+      "id": "A03",
+      "type": "over_limit",
+      "input": "超20MB、超100页、项目超3份或150页、粘贴超30000字符分别构造",
+      "expected": "明确拒绝且不破坏既有材料"
+    },
+    {
+      "id": "A04",
+      "type": "timeout_or_unavailable",
+      "input": "超时、拒绝连接、服务返回错误",
+      "expected": "保留已提交记录，可重试；不泄露密钥"
+    },
+    {
+      "id": "A05",
+      "type": "invalid_model_output",
+      "input": "非法JSON、错误引用ID、摘录不匹配分别构造",
+      "expected": "拒绝无效结果，修复最多一次，失败后可重试"
+    }
+  ]
+}

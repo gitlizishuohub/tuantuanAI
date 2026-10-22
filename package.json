@@ -1,0 +1,61 @@
+{
+  "name": "defense-wind-tunnel",
+  "version": "0.1.0",
+  "private": true,
+  "description": "答辩风洞 — 让研究经得起追问",
+  "author": "答辩风洞项目组",
+  "license": "UNLICENSED",
+  "main": "desktop/main.cjs",
+  "scripts": {
+    "dev": "node scripts/dev.cjs",
+    "dev:ui": "vite --host 127.0.0.1",
+    "build": "tsc --noEmit && vite build",
+    "start": "node scripts/start.cjs",
+    "test": ".venv\\Scripts\\python.exe -m pytest backend/tests -q",
+    "test:desktop": "node scripts/smoke.cjs",
+    "build:worker": ".venv\\Scripts\\python.exe -m PyInstaller --noconfirm --clean --onedir --name defense-worker --collect-all uvicorn --collect-all fastapi --collect-all pypdf --paths backend --distpath build/worker --workpath build/pyinstaller backend/worker.py",
+    "pack": "npm run build && npm run build:worker && electron-builder --win dir",
+    "dist": "npm run build && npm run build:worker && electron-builder --win nsis"
+  },
+  "dependencies": {
+    "lucide-react": "^0.468.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "electron": "^45.0.0",
+    "electron-builder": "^26.0.12",
+    "playwright": "^1.58.0",
+    "typescript": "^5.9.3",
+    "vite": "^7.3.0"
+  },
+  "build": {
+    "appId": "cn.defense.wind-tunnel",
+    "productName": "答辩风洞",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "desktop/**/*",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "build/worker/defense-worker",
+        "to": "worker"
+      }
+    ],
+    "win": {
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "deleteAppDataOnUninstall": false
+    }
+  }
+}
